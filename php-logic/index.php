@@ -51,6 +51,18 @@
                 <a href="answer/array-5.php">Array-5</a>
             </td>
         </tr>
+        <tr>
+            <td>Array + HTML GET/POST Request</td>
+            <td><a href="question/array-request.md">Array Request</a></td>
+            <td>
+                <a href="answer/array-request-1.php">Array-Request-1</a>
+                <br>
+                <a href="answer/array-request-2.php">Array-Request-2</a>
+                <br>
+                <a href="answer/array-request-3.php">Array-Request-3</a>
+                <br>
+            </td>
+        </tr>
     </table>
 </body>
 </html>
