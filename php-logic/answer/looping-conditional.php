@@ -47,4 +47,36 @@ for($horz = 1; $horz <= $input; $horz++){
     echo "<br> ";
 }
 
+
+echo "<br>Segitiga E, Input = $input<br>";
+for($horz = 1; $horz <= $input; $horz++){
+    for($vert = 1; $vert <= $horz%2; $vert++){
+        for($left = 0; $left <= $horz; $left++){
+            echo " &nbsp";
+        }
+        for($right = $input; $right >= $horz; $right--){
+            echo "*";
+            echo "&nbsp ";
+        }
+    echo "<br>";
+    }
+}
+
+
+echo "<br>Segitiga F , Input = $input<br>";
+for($horz = 1; $horz <= $input; $horz++){
+    for($vert = 1; $vert <= $horz%2; $vert++){
+        for($left = $input; $left >= $horz; $left--){
+            echo " &nbsp";
+        }
+        for($right = 1; $right <= $horz; $right++){
+            echo "*";
+            echo "&nbsp ";
+        }
+    echo "<br>";
+    }
+}
+
+
+echo "<br><br><br>";
 ?>
