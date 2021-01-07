@@ -80,12 +80,12 @@ for($horz=1; $horz <= $input; $horz++){
 
 echo "<br>Segitiga G, Input = $input<br>";
 for($horz=1; $horz <= $input; $horz++){
-    if($horz <= 3){
+    if($horz <= $input/2){
         for($vert=1; $vert <= $horz; $vert++){
             echo "*";
         }
     }
-    elseif($horz >= 3){
+    elseif($horz >= $input/2){
         for($vert=$input; $vert >= $horz; $vert--){
             echo "*";
         }
@@ -100,7 +100,7 @@ for($horz=1; $horz <= $input; $horz++){
 
 echo "<br>Segitiga H, Input = $input<br>";
 for($horz=1; $horz <= $input; $horz++){
-    if($horz <= 3){
+    if($horz <= $input/2){
         for($spasi=$input; $spasi >= $horz; $spasi--){
             echo " &nbsp";
         }
@@ -114,7 +114,7 @@ for($horz=1; $horz <= $input; $horz++){
             echo "*";
         }
     }
-    elseif($horz >= 3){
+    elseif($horz >= $input/2){
         for($spasi=1; $spasi <= $horz; $spasi++){
             echo " &nbsp";
         }
