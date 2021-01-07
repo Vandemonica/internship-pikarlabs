@@ -10,6 +10,8 @@ Buatlah code untuk menampilkan segitiga menggunakan PHP looping
 
 ### Input
 
+input berupa kelipatan ganjil (5, 7, 9)
+
 ```
 $input = 5;
 
@@ -47,4 +49,28 @@ segitiga D, input = 5
   ***  
    **   
     *    
+
+segitiga E, input = 5
+*****
+ ***
+  *
+
+segitiga F, input = 5
+  *
+ ***
+*****
+
+segitiga G, input = 5
+*
+***
+****
+***
+*
+
+segitiga H, input = 5
+   *
+ ***
+****
+ ***
+   *
 ```
