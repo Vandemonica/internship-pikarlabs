@@ -30,6 +30,9 @@ table a:hover{
     border-bottom: 3px solid green;
     color: green;
 }
+table tr:hover{
+    background-color: gray;
+}
 
 
 
@@ -39,7 +42,7 @@ table a:hover{
     color: azure;
     margin: 0 auto;
     padding: 12px;
-    width: 400px;
+    width: 650px;
 }
 
 .data p{
@@ -67,7 +70,7 @@ table a:hover{
     border: 1px solid black;
     width: 650px;
     padding: 2px 6px;
-    margin: 1px auto;
+    margin: 0 auto;
 }
 .cari input{
     font-size: 16px;
@@ -99,4 +102,20 @@ table a:hover{
 }
 .reset-Btn:hover{
     background-color: red;
+}
+
+.search-Bar{
+    background-color: rgb(60, 60, 60);
+    border: 1px solid black;
+    width: 650px;
+    margin: 0 auto;
+    padding: 2px 6px;
+    margin-bottom: 8px;
+    height: 40px;
+}
+
+.search-Bar p{
+    color: azure;
+    font-size: 14px;
+    font-weight: lighter;
 }
