@@ -2,7 +2,7 @@
 $input = 5;
 
 if( ($input % 2) == 0){
-    echo "Masukkan input genap!";
+    echo "Masukkan input ganjil!";
     die;
 }
 
