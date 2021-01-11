@@ -1,14 +1,31 @@
 <?php
 $input = [1, 3, 2, 9, 4];
-$cari = 2;
+$cari = 3;
 
 
-//untuk setiap $input sebagai $i dan ambil value dari key $i
-foreach($input as $i => $val){
-    //jika $val(nilai didalam $i) == $cari maka..
-    if($val == $cari){
-        //echo $i(keynya/index)
-        echo "Index ke $i";
+function CariInput($jarum){
+    global $input;
+    $i = null;
+
+    //untuk setiap $input sebagai $key dan ambil value dari key
+    foreach($input as $key => $val){
+        //jika $val(nilai didalam $i) == $cari maka..
+        if($val == $jarum){
+            //echo $key(index)
+            $i = $key;
+        }
+    }
+
+    if( isset($i) ){
+        echo "index ke $i";
+    }
+    else{
+        echo "Data tidak ditemukan";
     }
 }
+
+
+CariInput($cari);
+echo "<br><br>";
+CariInput(18);
 ?>

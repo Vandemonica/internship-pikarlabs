@@ -76,7 +76,7 @@ index ke 2
 
 ## Soal 4
 
-ada sebuah array, carilah yang memiliki value tertentu. tampilkan indexnya dan value dari index tersebut,
+ada sebuah array, carilah yang memiliki value tertentu. tampilkan indexnya dan value dari index tersebut. buat sebagai function sehingga bisa dilakukan beberapa pencarian sekaligus. 
 
 ### Input
 
@@ -86,7 +86,9 @@ $input = [
   { 'id' => 287, 'nama' => 'renaldy' },
   { 'id' => 423, 'nama' => 'fakhri' },
 ];
-$cari = '122';
+
+cariSiswa(122);
+cariSiswa('ivan');
 ```
 
 ### Output
@@ -94,15 +96,21 @@ $cari = '122';
 nama file : `/answer/array-4.php`
 
 ```
+------------------------
+cari siswa "122"
 index ke 0
 id=122, nama=rama
+
+------------------------
+cari siswa "ivan"
+data tidak ditemukan
 ```
 
 ---
 
 ## Soal 5
 
-ada sebuah array, carilah yang memiliki index dan value tertentu. tampilkan indexnya dan value dari index tersebut,
+ada sebuah array, carilah yang memiliki index dan value tertentu. tampilkan indexnya dan value dari index tersebut. buat sebagai function sehingga bisa dilakukan beberapa pencarian sekaligus.
 
 ### Input
 
@@ -112,8 +120,9 @@ $input = [
   { 'id' => 287, 'nama' => 'renaldy' },
   { 'id' => 423, 'nama' => 'fakhri' },
 ];
-$cariKey = 'nama';
-$cariValue = 'fakhri';
+
+cariObject('nama', 'fakhri');
+cariObject('nama', 'rahman');
 ```
 
 ### Output
@@ -121,6 +130,12 @@ $cariValue = 'fakhri';
 nama file : `/answer/array-5.php`
 
 ```
+------------------------
+cari object "nama: fakhri"
 index ke 2
-id=423, nama=fakhri
+id=122, nama=fakhri
+
+------------------------
+cari object "nama: rahman"
+data tidak ditemukan
 ```

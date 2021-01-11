@@ -4,14 +4,34 @@ $input = [
     [ 'id' => 287, 'nama' => 'renaldy' ],
     [ 'id' => 423, 'nama' => 'fakhri' ]
 ];
-$cari = '122';
 
-//untuk setiap $input sebagai $i dan ambil value dari $i sebagai $val
-foreach($input as $i => $val){
-    //jika value index id/nama == $cari, maka..
-    if($val['id'] == $cari || $val['nama'] == $cari){
-        echo "Index ke $i <br>";
-        echo "id = " . $val['id'] . ", nama = " . $val['nama'];
+function CariSiswa($cari){
+    //deklarasi
+    global $input;
+    $i = null;
+
+    //untuk setiap $input sebagai $i dan ambil value dari $i sebagai $val
+    foreach($input as $key => $val){
+        if($val['id'] == $cari){
+            $i = $key;
+        }
+    }
+
+    echo "cari siswa \"$cari\" ";
+    if( isset($i) ){
+        echo "<br>";
+        echo "index ke $i";
+        echo "<br>";
+        echo 'id = '. $input[$i]['id'] .", nama = ". $input[$i]['nama'];
+    }
+    else{
+        echo "<br>";
+        echo "Data tidak ditemukan";
     }
 }
+
+
+CariSiswa(423);
+echo "<br><br>";
+CariSiswa('ivan');
 ?>

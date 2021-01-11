@@ -1,6 +1,10 @@
 <?php
 $input = "smkn 2 surabaya";
 
+
+$result = null;
+
+
 //panjang string $input
 $length = strlen($input);
 
@@ -8,7 +12,10 @@ $length = strlen($input);
 //jika $rev >= 0, maka..; $rev decrement
 for($rev = $length-1; $rev >= 0; $rev--){
     //echo $input dengan index $rev yg telah diitung mundur
-    echo $input[$rev];
+    $result .= $input[$rev];
 }
+
+
+echo $result;
 
 ?>
