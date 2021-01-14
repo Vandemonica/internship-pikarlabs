@@ -6,3 +6,4 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>Personal-Web:Ivan</title>
 </head>
+<body class="m-0 p-0">
