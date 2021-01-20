@@ -2,13 +2,10 @@
 include "komponen/backend.php";
 include "komponen/header.php";
 
-//jika $_POST['reset'] isset(ada nilainya)
+
 if(isset($_POST["reset"])){
-    //redirect ke file ini tanpa query
     header("location: array-request-3.php");
 }
-
-
 
 ?>
 
@@ -17,44 +14,28 @@ if(isset($_POST["reset"])){
     <button type="submit" name="go" class="cari-Btn">Cari</button>
     <button type="submit" name="reset" class="reset-Btn">Reset</button>
 </form>
-<!-- jika $_GET['id'] isset(ada nilainya) -->
+
 <?php if(isset($_GET["id"])):?>
+    
+    <?php $i = TampilkanBio($input, $_GET['id']); ?>
+    <?php include "komponen/bio.php"; ?>
 
-    <?php $i = TampilkanBio($input, $_GET['id']);?>
-    <?php include "komponen/bio.php";?>
-
-<!-- Selain dari itu(id tidak isset) -->
 <?php else:?>
-    <!-- untuk label history pencarian -->
+
+    <div class="search-Bar">
+        <p>
+            <?php if( isset($_POST['cari']) ){
+                echo "Mencari siswa dengan ID:\"" .$_POST['cari']. "\"";
+            }?>
+        </p>
+    </div>
+
     <?php
-        if(isset($_POST["cari"])){
-            HistoriSearch($_POST["cari"]);
-        }
-        else{
-            echo "<div class='search-Bar'>";
-            echo "</div>";
-        }
+        $cari = isset($_POST['cari']) ? $_POST['cari'] : "";
+        $array = PencarianParsial($cari, $input);
+        include "komponen/tabel.php";
     ?>
-    <table>
-        
 
-        <tr>
-            <th>ID</th>
-            <th>Nama</th>
-            <th>Asal</th>
-            <th>Profil</th>
-        </tr>
-
-        <!-- tabel yg ditampilkan -->
-        <?php
-        if(isset($_POST["cari"]) || isset($_POST["go"])){
-            PencarianParsial($_POST["cari"], $input);
-        }
-        else{
-            TampilkanTabel($input);
-        }
-        ?>
-    </table>
 <?php endif;?>
 
 <?php

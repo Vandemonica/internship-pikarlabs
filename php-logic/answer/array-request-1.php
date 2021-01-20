@@ -10,17 +10,10 @@ include "komponen/header.php";
 
     <?php else:?>
 
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Nama</th>
-                <th>Asal</th>
-                <th>Link</th>
-            </tr>
-
-            <?php TampilkanTabel($input)?>
-
-        </table>
+        <?php
+            $array = $input;
+            include "komponen/tabel.php";
+        ?>
 
     <?php endif;?>
 <?php
