@@ -10,22 +10,16 @@ include "components/header.php";
 <div>
     <?php
         $len = count($portfolio);
-        $y = 0;
-
+        
         include_once "components/galeri.php";
 
-        while($y !== 3){
-            $image = GetGaleriContent($portfolio[$y]['img'], $portfolio[$y]['imgx']);
-            $capt = GetGaleriContent($portfolio[$y]['capt'], $portfolio[$y]['captx']);
-    
-            $modalLen = count($image);
-            
-            ModalGaleri(true, $y, $modalLen, $capt, $image);
+        for($x=0; $x<$len; $x++){
+            $image = GetGaleriContent($portfolio[$x]['img'], $portfolio[$x]['imgx']);
+            $capt = GetGaleriContent($portfolio[$x]['capt'], $portfolio[$x]['captx']);
 
-            $y++;
+            ModalGaleri($x, $capt, $image);
         }
 
-        
     ?>
 </div>
 <!-- Pop-Up Galeri Ends -->
@@ -131,9 +125,8 @@ include "components/header.php";
                         <?=$i['ket'];?>
                     </p>
                     <a class="cursor-pointer bg-blue-700 py-1 px-6 rounded-md border border-solid hover:bg-blue-500" 
-                            onclick="document.getElementById('galeri-<?=$k;?>').style.display='block';
-                                    document.getElementById('slide-0').style.display='block';">
-                        Galeri<?=$k;?>
+                            onclick="ShowModal(<?=$k;?>, 'galeri-<?=$k;?>')">
+                        Galeri
                     </a>
                     <a class="bg-green-700 py-1 px-4 rounded-md border border-solid hover:bg-green-500"
                             href="<?=$i['link'];?>">
@@ -149,7 +142,7 @@ include "components/header.php";
 
 
 <!-- Contact Starts -->
-<div class="bg-gray-800 text-white p-2">
+<div class="bg-gray-800 p-2">
     <?php include"components/contact.php";?>
     <?php ContactBox('gray-800','white');?>
 </div>

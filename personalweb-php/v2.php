@@ -11,6 +11,11 @@ include "components/header.php";
 </style>
 
 
+<!-- Navigation Bar Starts -->
+<?php include "components/navbar.php";?>
+<!-- Navigation Bar Ends -->
+
+
 
 <!-- Main Banner Starts -->
 <div class="pt-60 w-full md:pt-80">
@@ -100,7 +105,7 @@ include "components/header.php";
 <!-- Contact Starts -->
 <div class="p-2 mt-10 md:px-10 md:mt-36 lg:px-40">
     <?php include"components/contact.php";?>
-    <?php ContactBox('gray-200','gray-300');?>
+    <?php ContactBox('gray-200','gray-700');?>
 </div>
 <!-- Contact Ends -->
 
