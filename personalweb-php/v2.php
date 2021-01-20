@@ -86,9 +86,11 @@ include "components/header.php";
     </div>
     <div class="grid md:grid-cols-3">
         <?php foreach($portfolio as $id => $i):?>
-            <a href="portfolio.php?id=<?=$id;?>" class="group bg-gray-200 grid grid-rows-1 rounded-xl p-3 m-2 hover:shadow-2xl transform hover:scale-110">
+            <a href="portfolio.php?id=<?=$id;?>" 
+                class="group bg-gray-200 transition duration-300 grid grid-rows-1 rounded-xl p-3 m-2 
+                        hover:shadow-2xl transform hover:scale-110 hover:-translate-y-4">
                 <div class="bg-black w-auto overflow-hidden h-48">
-                    <img class="w-full opacity-40 group-hover:opacity-100" src="assets/<?=$i['img'];?>" alt="<?=$i['img'];?>">
+                    <img class="w-full transition duration-300 opacity-40 group-hover:opacity-100" src="assets/<?=$i['img'];?>" alt="<?=$i['img'];?>">
                 </div>
                 <div class="mt-2">
                     <h3 class="text-md font-bold ml-2 md:text-lg lg:text-xl"><?=$i['judul'];?></h3>
