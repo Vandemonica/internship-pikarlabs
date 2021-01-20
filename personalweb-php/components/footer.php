@@ -5,6 +5,6 @@
         <p>Website Design & Development by Ivan Nircahya</p>
     </div>
 </div>
-
+<script src="components/galeri.js"></script>
 </body>
 </html>
