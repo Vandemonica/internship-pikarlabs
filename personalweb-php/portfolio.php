@@ -25,21 +25,21 @@ $result = GetPortfolio($portfolio, $id);
 
     <div class="grid w-full pb-40 p-2 md:grid-cols-2 md:p-10 lg:p-20">
 
-        <div class="mt-2 bg-gray-300 w-full rounded-md px-6 py-4">
+        <div class="mt-2 bg-gray-300 w-full rounded-md px-3 py-4">
             <!-- Main Picture Starts -->
             <div>
                 <img class="bg-black lg:w-full" src="assets/<?=$result[0]['img'];?>" alt="<?=$result[0]['img'];?>">
-                <small><?=$result[0]['capt'];?></small>
+                <small class="text-xs md:text-sm lg:text-md"> <?=$result[0]['capt'];?> </small>
             </div>
             <!-- Main Picture Ends -->
 
 
             <!-- Extra Picture Starts -->
-            <div class="space-x-2 grid grid-cols-<?=$len;?>">
+            <div class="space-x-2 grid md:grid-cols-<?=$len;?>">
                 <?php while($x !== $len):?>
                     <div class="mt-8">
                         <img class="bg-black lg:w-full" src="assets/<?=$result[0]['imgx'][$x];?>" alt="<?=$result[0]['imgx'][$x];?>">
-                        <small><?=$result[0]['captx'][$x];?></small>
+                        <small class="text-xs md:text-sm lg:text-md"> <?=$result[0]['captx'][$x];?> </small>
                     </div>
                     
                     <?php $x++;?>
@@ -57,7 +57,7 @@ $result = GetPortfolio($portfolio, $id);
                     Kembali
                 </a>
             </div>
-            <div class="mt-8 border-b-2 border-gray-400 ml-4 w-1/4">
+            <div class="mt-8 border-b-2 border-gray-400 ml-4 w-1/2">
                 <h1 class="text-3xl"> <?=$result[0]['judul'];?> </h1>
             </div>
             <p class="mb-4 text-lg"> Dibuat pada tahun: <?=$result[0]['tahun'];?> </p>

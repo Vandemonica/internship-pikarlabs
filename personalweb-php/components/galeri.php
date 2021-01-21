@@ -35,7 +35,7 @@
                 <?php while($i !== $len):?>
 
                     <div style="display: none;" id="<?=$slideId.$i;?>">
-                        <div class="grid grid-cols-13">
+                        <div class="grid grid-cols-13 border-b border-black mb-2">
                             <button onclick="prev(<?=$index;?>, <?=$i;?>, <?=$len;?>)" class="col-start-1 col-end-1 text-xl md:text-3xl"> < </button>
 
                             <h5 class="col-start-2 col-end-12 text-center mx-auto pt-1 text-sm md:text-lg">

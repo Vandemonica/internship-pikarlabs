@@ -1,8 +1,6 @@
 <?php
+date_default_timezone_set('Asia/Jakarta');
 
-if(!isset($_SESSION['mail'])){
-    $_SESSION['mail'] = 0;
-}
 
 if(isset($_POST['email'])){
     $kepada = "ivanxirko1987@gmail.com";
@@ -40,6 +38,26 @@ function GetGaleriContent($main, $extra){
 
     array_push($result, $main);
     $result = array_merge($result, $extra);
+
+    return $result;
+}
+
+
+function GetTime(){
+    $time = date('H');
+
+    if($time < 12){
+        $result = "Good morning";
+    }
+    elseif($time < 15){
+        $result = "Good afternoon";
+    }
+    elseif($time < 19){
+        $result = "Good evening";
+    }
+    else{
+        $result = "Good night";
+    }
 
     return $result;
 }

@@ -33,7 +33,8 @@ $skills = [
 
 $education = [
     ['nama'=>'SDN Tandes Kidul 1', 'tahun'=>'2010-2016'],
-    ['nama'=>'SMP Dharma Bhakti Surabaya', 'tahun'=>'2016-2019'],
+    ['nama'=>'SMPN 2 Cerme', 'tahun'=>'2016-2017'],
+    ['nama'=>'SMP Dharma Bhakti', 'tahun'=>'2017-2019'],
     ['nama'=>'SMKN 2 Surabaya', 'tahun'=>'2019-Sekarang']
 ];
 
@@ -72,7 +73,7 @@ $portfolio = [
         'ket'=>'Web untuk sharing gambar dan foto-foto',
         'link'=>'http://gallerium.great-site.net',
         'img'=>'gallerium0.png',
-        'capt'=>'Tampilan gallerium sebelum login',
+        'capt'=>'Tampilan Gallerium sebelum login',
         'imgx'=>[
             'galleriumLogin.png', 'galleriumLogged.png'
         ],

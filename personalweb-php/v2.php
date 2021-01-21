@@ -34,7 +34,7 @@ include "components/header.php";
 
 
 <!-- Skills Starts -->
-<div class="mt-10 p-2 md:px-10 lg:px-60">
+<div class="mt-4 p-2 md:px-10 lg:px-60">
     <div class="m-2 w-32 border-b border-gray-400">
         <h1 class="font-black text-xl">My Skills</h1>
     </div>
@@ -44,7 +44,7 @@ include "components/header.php";
                 <li class="m-2">
                     <p><?=$i['bahasa'];?></p>
                     <div class="bg-gray-300 cursor-default rounded-lg text-right text-sm">
-                        <div class="text-white p-1 rounded-lg md:p-2" style="background-color:<?=$i['color'];?>; width:<?=$i['xp']+10;?>%;">
+                        <div class="text-white p-1 rounded-lg md:p-2" style="background-color:<?=$i['color'];?>; width:<?=$i['xp']+5;?>%;">
                             <?=$i['xp'];?>%
                         </div>
                     </div>
@@ -58,11 +58,11 @@ include "components/header.php";
 
 
 <!-- Education Starts -->
-<div class="mt-10 p-2 md:px-10 lg:px-60">
+<div class="mt-4 p-2 md:px-10 lg:px-60">
     <div class="m-2 w-60 border-b border-gray-400">
         <h1 class="font-black text-xl">Riwayat Pendidikan</h1>
     </div>
-    <div class="grid md:grid-cols-3">
+    <div class="grid md:grid-cols-2">
         <?php foreach($education as $i):?>
             <ul class="container">
                 <li class="m-2">
@@ -80,15 +80,15 @@ include "components/header.php";
 
 
 <!-- Portfolio Starts -->
-<div class="mt-10 p-2 md:px-10 lg:px-60">
+<div class="mt-4 p-2 md:px-10 lg:px-60">
     <div class="m-2 w-32 border-b border-gray-400">
         <h1 class="pt-40 -mt-40 font-black text-xl" id="Portfolio">Portfolio</h1>
     </div>
     <div class="grid md:grid-cols-3">
         <?php foreach($portfolio as $id => $i):?>
             <a href="portfolio.php?id=<?=$id;?>" 
-                class="group bg-gray-200 transition duration-300 grid grid-rows-1 rounded-xl p-3 m-2 
-                        hover:shadow-2xl transform hover:scale-110 hover:-translate-y-4">
+                class="group bg-gray-200 transition duration-300 grid grid-rows-1 rounded-xl p-2 m-2
+                        hover:shadow-lg transform hover:-translate-y-2">
                 <div class="bg-black w-auto overflow-hidden h-48">
                     <img class="w-full transition duration-300 opacity-40 group-hover:opacity-100" src="assets/<?=$i['img'];?>" alt="<?=$i['img'];?>">
                 </div>
@@ -105,7 +105,7 @@ include "components/header.php";
 
 
 <!-- Contact Starts -->
-<div class="p-2 mt-10 md:px-10 md:mt-36 lg:px-40">
+<div class="p-2 mt-10 md:px-10 md:mt-24 lg:px-40">
     <?php include"components/contact.php";?>
     <?php ContactBox('gray-200','gray-700');?>
 </div>

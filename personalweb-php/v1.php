@@ -19,11 +19,25 @@ include "components/header.php";
 
             ModalGaleri($x, $capt, $image);
         }
+        
 
+        if(isset($_POST['welcome'])){
+            $_SESSION['nama'] = $_POST['welcome'];
+        }
+
+
+        $time = GetTime();
+        if(!isset($_SESSION['nama'])){
+            $welcome1 = $time.'!';
+            $welcome2 = "Greetings, How do you want us to refer you as";
+        }
+        else{
+            $welcome1 = $time.' '.$_SESSION['nama'].'!';
+            $welcome2 = "Hope you had a good day!";
+        }
     ?>
 </div>
 <!-- Pop-Up Galeri Ends -->
-
 
 
 <!-- Navigation Bar Starts -->
@@ -34,18 +48,31 @@ include "components/header.php";
 
 <!-- Main Banner Starts -->
 <div class="w-auto">
-    <div class="float-center bg-black md:float-left">
+    <div class="float-center relative bg-black">
         <img class="opacity-60" src="assets/refuge.png" alt="Banner">
+
+        <!-- Fitur extra untuk layar md+ -->
+        <div class="hidden font-mono absolute transform text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 md:block">
+            <p id="welcome1" class="text-xl whitespace-nowrap text-white md:text-4xl lg:text-6xl"></p>
+            <p id="welcome2" class="text-sm whitespace-nowrap my-2 text-white md:text-md lg:text-xl"></p>
+            <?php if(!isset($_SESSION['nama'])):?>
+            <form method="post">
+                <input class="text-center text-white bg-transparent border rounded-md py-1 w-full" name="welcome" type="text" placeholder="Your Name">
+            </form>
+            <?php endif;?>
+        </div>
+        <!-- Extra End -->
+
     </div>
-    <div class="text-white relative bg-gray-900 h-50 w-full p-4 border-t-2 border-b-2 border-solid border-indigo-900 md:flex md:flex-row">
-        <div class="inline-block absolute -top-20 float-center p-2 sm:-top-40 md:ml-8 md:float-left md:-top-52">
-            <img class="w-28 border-2 rounded-full border-solid sm:w-40 md:w-60" src="assets/<?=$profil['foto'];?>" alt="Profil-Img" id="Profil">
+    <div class="text-white relative bg-gray-900 h-50 w-full p-4 border-t border-b border-solid border-indigo-900 md:flex md:flex-row">
+        <div class="inline-block absolute -top-20 float-center p-2 sm:-top-40 md:ml-2 lg:ml-24 md:float-left md:-top-44 lg:-top-52">
+            <img class="w-28 border-2 rounded-full border-solid sm:w-40 md:w-52 lg:w-60" src="assets/<?=$profil['foto'];?>" alt="Profil-Img" id="Profil">
         </div>
         <div class="inline-block float-center p-2 md:float-left md:inline">
-            <h1 class="font-bold text-xl mt-5 mb-1 md:text-2xl md:px-20">
+            <h1 class="font-bold text-xl mt-5 mb-1 md:text-2xl md:px-10 lg:px-36">
                 <?=$profil['nama'];?>
             </h1>
-            <p class="text-md md:text-lg md:px-20">
+            <p class="text-md md:text-lg md:px-10 lg:px-36">
                 <?=$profil['deskripsi'];?>
             </p>
         </div>
@@ -56,7 +83,7 @@ include "components/header.php";
 
 
 <!-- Skills x Education Starts -->
-<div class="bg-gray-800 grid-col-8 p-2 md:flex md:flex-row">
+<div class="bg-gray-800 px-2 grid md:px-10 lg:px-36 md:grid-cols-2">
     <!-- Skills Starts -->
     <div class="container py-6 md:py-12">
         <div class="ml-2 mt-2 text-white text-lg md:text-xl md:ml-16">
@@ -68,7 +95,7 @@ include "components/header.php";
                 <?=$i['bahasa'];?>
             </h7>
             <div class="bg-white cursor-default text-center border rounded-lg">
-                <div style="width: <?=$i['xp'];?>%; background-color: <?=$i['color'];?>;" class="rounded-lg">
+                <div style="width: <?=$i['xp']+5;?>%; background-color: <?=$i['color'];?>;" class="rounded-lg py-0.5">
                     <?=$i['xp'];?>%
                 </div>
             </div>
@@ -84,11 +111,11 @@ include "components/header.php";
         </div>
         <div class="mt-1 text-white">
             <?php foreach($education as $i):?>
-                <div class="p-4 rounded-xl mt-6 md:ml-2">
+                <div class="mt-4 p-2 rounded-xl md:ml-2">
                     <h7 class="ml-4"> 
                         Pada tahun: <?=$i['tahun'];?>
                     </h7>
-                    <div class="bg-gray-700 p-1 px-4 border border-gray-600">
+                    <div class="bg-gray-700 p-0.5 px-4 border border-gray-600 py-1 text-sm">
                         <p>Menempuh pendidikan di <i><?=$i['nama'];?></i> </p>
                     </div>
                 </div>
@@ -102,14 +129,14 @@ include "components/header.php";
 
 
 <!-- Portfolio Starts -->
-<div class="bg-gray-800 py-10 border-t border-gray-700 border-solid">
+<div class="bg-gray-800 py-10 px-2 md:px-10 lg:px-36 border-t border-gray-700">
     <div class="text-center text-white text-lg">
         <h6 class="pt-40 -mt-40 font-bold text-2xl" id="Portfolio">--Portfolio--</h6>
     </div>
-    <div class="mt-3 text-white mx-2 md:mx-40">
+    <div class="mt-3 text-white">
         <?php foreach($portfolio as $k => $i):?>
-            <div class="p-4 rounded-lg mt-4 bg-gray-700 lg:px-16 lg:py-4 md:ml-2">
-                <h7 class="ml-4 px-4 border text-xl font-bold md:text-2xl">
+            <div class="p-4 rounded-md mt-4 bg-gray-700 lg:px-16 lg:py-4 md:ml-2">
+                <h7 class="ml-4 px-4 border-t border-r border-l text-xl font-bold md:text-2xl">
                     <span>
                         <?=$i['judul'];?>
                     </span>
@@ -117,18 +144,18 @@ include "components/header.php";
                         <?=$i['tahun'];?>
                     </span>
                 </h7>
-                <div class="border border-solid md:w-3/4">
-                    <img class="w-full" src="assets/<?=$i['img'];?>" alt="<?=$i['img'];?>">
+                <div onclick="ShowModal(<?=$k;?>, 'galeri-<?=$k;?>')" class="group border bg-black relative text-center lg:w-5/6">
+                    <img class="w-full transition duration-300 cursor-pointer md:h-96 object-left-top object-cover group-hover:opacity-30" 
+                            src="assets/<?=$i['img'];?>" alt="<?=$i['img'];?>">
+                    <div class="absolute transition duration-300 transform opacity-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 group-hover:opacity-100">
+                        <p class="text-xl px-6 border border-white cursor-pointer rounded-md md:text-2xl md:px-10">Lihat</p>
+                    </div>
                 </div>
-                <div class="m-2 space-x-4 bg-gray-700">
-                    <p class="m-2 text-lg pb-5">
+                <div class="my-3 space-x-4 bg-gray-700">
+                    <p class="text-lg pb-5">
                         <?=$i['ket'];?>
                     </p>
-                    <a class="cursor-pointer bg-blue-700 py-1 px-6 rounded-md border border-solid hover:bg-blue-500" 
-                            onclick="ShowModal(<?=$k;?>, 'galeri-<?=$k;?>')">
-                        Galeri
-                    </a>
-                    <a class="bg-green-700 py-1 px-4 rounded-md border border-solid hover:bg-green-500"
+                    <a class="bg-green-700 py-1 px-8 rounded-md border border-solid hover:bg-green-500"
                             href="<?=$i['link'];?>">
                         Kunjungi
                     </a>
@@ -142,11 +169,18 @@ include "components/header.php";
 
 
 <!-- Contact Starts -->
-<div class="bg-gray-800 p-2">
-    <?php include"components/contact.php";?>
+<div class="bg-gray-800 p-2 md:px-10 lg:px-22">
+    <?php include "components/contact.php";?>
     <?php ContactBox('gray-800','white');?>
 </div>
 <!-- Contact Ends -->
+
+
+<script>
+    var text1 = '<?=$welcome1;?>';
+    var text2 = '<?=$welcome2;?>';
+</script>
+<script src="components/extra.js"></script>
 
 <?php
 include "components/footer.php";
