@@ -56,9 +56,9 @@ include "components/header.php";
             <p id="welcome1" class="text-xl whitespace-nowrap text-white md:text-4xl lg:text-6xl"></p>
             <p id="welcome2" class="text-sm whitespace-nowrap my-2 text-white md:text-md lg:text-xl"></p>
             <?php if(!isset($_SESSION['nama'])):?>
-            <form method="post">
-                <input class="text-center text-white bg-transparent border rounded-md py-1 w-full" name="welcome" type="text" placeholder="Your Name">
-            </form>
+                <form method="post">
+                    <input class="text-center text-white bg-transparent border rounded-md py-1 w-full" name="welcome" type="text" placeholder="Your Name">
+                </form>
             <?php endif;?>
         </div>
         <!-- Extra End -->

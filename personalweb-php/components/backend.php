@@ -46,13 +46,13 @@ function GetGaleriContent($main, $extra){
 function GetTime(){
     $time = date('H');
 
-    if($time < 12){
+    if($time <= 11 && $time > 3){
         $result = "Good morning";
     }
-    elseif($time < 15){
+    elseif($time <= 15 && $time > 11){
         $result = "Good afternoon";
     }
-    elseif($time < 19){
+    elseif($time <= 19 && $time > 15){
         $result = "Good evening";
     }
     else{
