@@ -6,6 +6,23 @@ include "components/header.php";
 ?>
 
 
+<?php
+// <---------Extra-------->
+if(isset($_POST['welcome'])){
+    $_SESSION['nama'] = $_POST['welcome'];
+}
+
+$time = GetTime();
+if(!isset($_SESSION['nama'])){
+    $welcome1 = $time.'!';
+    $welcome2 = "Greetings, How do you want us to refer you?";
+}
+else{
+    $welcome1 = $time.' '.$_SESSION['nama'].'!';
+    $welcome2 = "Hope you had a good day!";
+}
+?>
+
 <!-- Pop-Up Galeri Starts -->
 <div>
     <?php
@@ -18,22 +35,6 @@ include "components/header.php";
             $capt = GetGaleriContent($portfolio[$x]['capt'], $portfolio[$x]['captx']);
 
             ModalGaleri($x, $capt, $image);
-        }
-        
-
-        if(isset($_POST['welcome'])){
-            $_SESSION['nama'] = $_POST['welcome'];
-        }
-
-
-        $time = GetTime();
-        if(!isset($_SESSION['nama'])){
-            $welcome1 = $time.'!';
-            $welcome2 = "Greetings, How do you want us to refer you as";
-        }
-        else{
-            $welcome1 = $time.' '.$_SESSION['nama'].'!';
-            $welcome2 = "Hope you had a good day!";
         }
     ?>
 </div>
@@ -176,11 +177,13 @@ include "components/header.php";
 <!-- Contact Ends -->
 
 
+<!-- Extra Script -->
 <script>
     var text1 = '<?=$welcome1;?>';
     var text2 = '<?=$welcome2;?>';
 </script>
 <script src="components/extra.js"></script>
+<!-- Extra Ends -->
 
 <?php
 include "components/footer.php";

@@ -1,21 +1,16 @@
-var x = 0;
-var y = 0;
+function WalkingText(teks, id, i, interval){
+    var _elem = document.getElementById(id);
 
-function welcome1(){
-    if (x < text1.length) {
-        document.getElementById('welcome1').innerHTML += text1.charAt(x);
-        x++;
-        setTimeout(welcome1, 100);
+    if (i < teks.length) {
+        _elem.innerHTML += teks.charAt(i);
+        i++;
+        setTimeout(function(){
+            WalkingText(teks, id, i, interval);
+        }, interval);
     }
 }
 
-function welcome2(){
-    if (y < text2.length) {
-        document.getElementById('welcome2').innerHTML += text2.charAt(y);
-        y++;
-        setTimeout(welcome2, 50);
-    }
-}
 
-window.addEventListener('load', welcome1);
-window.addEventListener('load', welcome2);
+
+window.addEventListener('load', WalkingText(text1, 'welcome1', 0, 200))
+window.addEventListener('load', WalkingText(text2, 'welcome2', 0, 100));
