@@ -53,7 +53,7 @@ $result = GetPortfolio($portfolio, $id);
         <div class="mt-2 px-4 md:ml-10">
             <div class="float-right">
                 <a class="bg-gray-300 py-1 px-8 rounded-md hover:bg-gray-400" 
-                        href="v2.php#portfolio">
+                        href="v2.php#Portfolio">
                     Kembali
                 </a>
             </div>
@@ -83,11 +83,11 @@ $result = GetPortfolio($portfolio, $id);
     header("refresh:2;url=v2.php");
     ?>
     <div class="p-2 pt-40 pb-96 w-full text-center">
-        <div class="md:w-1/2 mx-auto md:px-2 py-12 bg-gray-200 rounded-lg ">
-            <h1 class="text-lg md:text-xl lg:text-2xl font-bold mb-2">
-                <span class="px-2 border-2 rounded-full border-red-500">&#10069;</span>
+        <div class="md:w-1/2 mx-auto md:px-2 py-12 bg-gray-200 shadow-lg">
+            <h1 class="text-lg text-red-500 md:text-xl lg:text-2xl font-bold mb-2">
+                <span class="text-red-500 text-xl px-2 border-2 rounded-full border-red-500 md:text-2xl lg:text-3xl">!</span>
                     Portfolio tidak ditemukan
-                <span class="px-2 border-2 rounded-full border-red-500">&#10069;</span>
+                <span class="text-red-500 text-xl px-2 border-2 rounded-full border-red-500 md:text-2xl lg:text-3xl">!</span>
             </h1>
             <p class="text-md md:text-lg">anda akan segera diarahkan ke halaman utama</p>
         </div>

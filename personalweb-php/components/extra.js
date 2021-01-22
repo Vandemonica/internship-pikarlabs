@@ -13,4 +13,4 @@ function WalkingText(teks, id, i, interval){
 
 
 window.addEventListener('load', WalkingText(text1, 'welcome1', 0, 200))
-window.addEventListener('load', WalkingText(text2, 'welcome2', 0, 100));
+window.addEventListener('load', WalkingText(text2, 'welcome2', 0, 60));

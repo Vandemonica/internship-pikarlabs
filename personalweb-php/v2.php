@@ -22,7 +22,7 @@ include "components/header.php";
     <div class="w-full absolute top-24 md:top-32" id="Profil">
         <img class="w-44 mx-auto border-2 border-gray-500 rounded-full md:w-60" src="assets/<?=$profil['foto'];?>" alt="Profil Picture">
     </div>
-    <div class="w-full pt-8 pb-2 bg-gray-100 border-t-2 border-b-2 border-gray-400 md:pt-10">
+    <div class="w-full pt-8 pb-2 bg-gray-100 border-t border-b border-gray-400 md:pt-10">
         <div class=" m-2 text-md px-2 md:px-20 md:text-lg">
             <h5 class="mx-auto text-2xl text-center mb-2 text-bold md:text-3xl"><?=$profil['nama'];?></h5>
             <p class="text-md md:text-lg md:px-10 lg:px-40"> <?=$profil['deskripsi'];?> </p>
@@ -35,7 +35,7 @@ include "components/header.php";
 
 <!-- Skills Starts -->
 <div class="mt-4 p-2 md:px-10 lg:px-60">
-    <div class="m-2 w-32 border-b border-gray-400">
+    <div class="m-2 ml-6 w-32 border-b border-gray-400">
         <h1 class="font-black text-xl">My Skills</h1>
     </div>
     <div class="grid md:grid-cols-2">
@@ -59,7 +59,7 @@ include "components/header.php";
 
 <!-- Education Starts -->
 <div class="mt-4 p-2 md:px-10 lg:px-60">
-    <div class="m-2 w-60 border-b border-gray-400">
+    <div class="m-2 ml-6 w-60 border-b border-gray-400">
         <h1 class="font-black text-xl">Riwayat Pendidikan</h1>
     </div>
     <div class="grid md:grid-cols-2">
@@ -81,7 +81,7 @@ include "components/header.php";
 
 <!-- Portfolio Starts -->
 <div class="mt-4 p-2 md:px-10 lg:px-60">
-    <div class="m-2 w-32 border-b border-gray-400">
+    <div class="m-2 ml-6 w-32 border-b border-gray-400">
         <h1 class="pt-40 -mt-40 font-black text-xl" id="Portfolio">Portfolio</h1>
     </div>
     <div class="grid md:grid-cols-3">

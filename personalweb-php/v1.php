@@ -53,7 +53,7 @@ else{
         <img class="opacity-60" src="assets/refuge.png" alt="Banner">
 
         <!-- Fitur extra untuk layar md+ -->
-        <div class="hidden font-mono absolute transform text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 md:block">
+        <div class="hidden opacity-80 font-mono absolute transform text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 md:block">
             <p id="welcome1" class="text-xl whitespace-nowrap text-white md:text-4xl lg:text-6xl"></p>
             <p id="welcome2" class="text-sm whitespace-nowrap my-2 text-white md:text-md lg:text-xl"></p>
             <?php if(!isset($_SESSION['nama'])):?>
