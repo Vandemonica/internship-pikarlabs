@@ -1,0 +1,98 @@
+{# deklarasi #}
+{% set len = portfolio.imgx|length %}
+
+
+{% extends '_layout.twig' %}
+
+
+{% block content %}
+<?php
+include "components/data.php";
+include "components/backend.php";
+include "components/header.php";
+
+$id = @$_GET['id'];
+$result = GetPortfolio($portfolio, $id);
+?>
+
+<?php if(!empty($result) && isset($id) && $id != null):?>
+
+    <?php
+    $len = count($result[0]['imgx']);
+    $x = 0;
+
+
+    
+    $image = GetGaleriContent($portfolio[$id]['img'], $portfolio[$id]['imgx']);
+    $capt = GetGaleriContent($portfolio[$id]['capt'], $portfolio[$id]['captx']);
+
+    include "components/galeri.php";
+    ModalGaleri(-1, $capt, $image);
+    ?>
+
+
+{% if (id is not empty) and (portfolio is not empty) %}
+
+    <div class="grid w-full pb-40 p-2 md:grid-cols-2 md:p-10 lg:p-20">
+        <div class="mt-2 bg-gray-300 w-full rounded-md px-3 py-4">
+            <!-- Main Picture Starts -->
+            <div>
+                <img class="bg-black lg:w-full" src="assets/{{portfolio.img}}" alt="{{portfolio.img}}">
+                <small class="text-xs md:text-sm lg:text-md">{{portfolio.capt}}</small>
+            </div>
+            <!-- Main Picture Ends -->
+
+
+            <!-- Extra Picture Starts -->
+            <div class="space-x-2 grid md:grid-cols-{{len}}">
+                {% for key, item in portfolio.imgx %}
+                    <div class="mt-8">
+                        <img class="bg-black lg:w-full" src="assets/{{item}}" alt="{{item}}">
+                        <small class="text-xs md:text-sm lg:text-md">{{item}}</small>
+                    </div>
+                {% endfor %}
+            </div>
+            <!-- Extra Picture Ends -->
+        </div>
+
+
+        <!-- Deskripsi and Button Starts -->
+        <div class="mt-2 px-4 md:ml-10">
+            <div class="float-right">
+                <a class="bg-gray-300 py-1 px-8 rounded-md hover:bg-gray-400" 
+                        href="v2.php#Portfolio">
+                    Kembali
+                </a>
+            </div>
+            <div class="mt-8 border-b-2 border-gray-400 ml-4 w-1/2">
+                <h1 class="text-3xl">{{portfolio.judul}}</h1>
+            </div>
+            <p class="mb-4 text-lg"> Dibuat pada tahun: {{portfolio.tahun}}</p>
+            <p class="text-md md:text-lg lg:text-xl">{{portfolio.ket}}</p>
+            <div class="mt-12 text-white space-x-8">
+                <a onclick="ShowModal(-1, 'galeri')"
+                        class="cursor-pointer bg-blue-500 py-1 px-6 rounded-md hover:bg-blue-400">
+                    Galeri
+                </a>
+                <a class="bg-green-500 py-1 px-4 rounded-md hover:bg-green-400"
+                        href="{{portfolio.link}}">
+                    Kunjungi
+                </a>
+            </div>
+        </div>
+        <!-- Deskripsi and Button Ends -->
+    </div>
+{% else %}
+    <div class="p-2 pt-40 pb-96 w-full text-center">
+        <div class="md:w-1/2 mx-auto md:px-2 py-12 bg-gray-200 shadow-lg">
+            <h1 class="text-lg text-red-500 md:text-xl lg:text-2xl font-bold mb-2">
+                <span class="text-red-500 text-xl px-2 border-2 rounded-full border-red-500 md:text-2xl lg:text-3xl">!</span>
+                    Portfolio tidak ditemukan
+                <span class="text-red-500 text-xl px-2 border-2 rounded-full border-red-500 md:text-2xl lg:text-3xl">!</span>
+            </h1>
+            <p class="text-md md:text-lg">anda akan segera diarahkan ke halaman utama</p>
+        </div>
+    </div>
+{% endif %}
+
+{% endblock %}

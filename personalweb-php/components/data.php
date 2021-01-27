@@ -1,17 +1,17 @@
 <?php
 $vindex = [
     ['ver'=>'Versi 1', 'link'=>'v1.php', 'img'=>'v1.png', 
-        'ket'=>'&nbsp;&nbsp;&nbsp; Personal Web yang memiliki section: 
+        'ket'=>'Personal Web yang memiliki section: 
             profil, skills, portfolio, dan contact dalam satu halaman'],
 
     ['ver'=>'Versi 2', 'link'=>'v2.php', 'img'=>'v2.png', 
-        'ket'=>'&nbsp;&nbsp;&nbsp;&nbsp;Seperti versi-1 tapi halaman portfolionya terpisah dan tampilan lebih minimalis'],
+        'ket'=>'Seperti versi-1 tapi halaman portfolionya terpisah dan tampilan lebih minimalis'],
 ];
 
 $profil = [
     'nama'=>'Ivan Nircahya',
     'foto'=>'redacted.jpg',
-    'deskripsi'=>'&nbsp;&nbsp;&nbsp; Seorang pelajar dari SMKN 2 Surabaya 
+    'deskripsi'=>'Seorang pelajar dari SMKN 2 Surabaya 
                     yang duduk dibangku kelas 11 jurusan SIJA (Sistem Informatika Jaringan dan Aplikasi). 
                     Saat ini saya sedang menjelajahi dunia pemrogramman dan membuat project-project kecil 
                     menggunakan bahasa pemrogramman PHP, SQL(untuk database), C#, dan Python.'
@@ -22,6 +22,10 @@ $navbar = [
     'sekte'=>[
         'Profil', 'Portfolio', 'Contact'
     ]
+];
+
+$sekte = [
+    'My Skills', 'Riwayat Pendidikan', 'Portfolio'
 ];
 
 $skills = [

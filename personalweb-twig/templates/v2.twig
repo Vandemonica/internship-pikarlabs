@@ -1,0 +1,110 @@
+{% extends '_layout.twig' %}
+
+{% block content %}
+<style>
+    body{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+</style>
+
+
+<!-- Navigation Bar Starts -->
+{% include 'navbar.twig' %}
+<!-- Navigation Bar Ends -->
+
+
+
+<!-- Main Banner Starts -->
+<div class="pt-60 w-full md:pt-80">
+    <div class="w-full absolute top-24 md:top-32" id="Profil">
+        <img class="w-44 mx-auto border-2 border-gray-500 rounded-full md:w-60" src="assets/{{profil.foto}}" alt="Profil Picture">
+    </div>
+    <div class="w-full pt-8 pb-2 bg-gray-100 border-t border-b border-gray-400 md:pt-10">
+        <div class=" m-2 text-md px-2 md:px-20 md:text-lg">
+            <h5 class="mx-auto text-2xl text-center mb-2 text-bold md:text-3xl">{{profil.nama}}</h5>
+            <p class="text-md md:text-lg md:px-10 lg:px-40">{{profil.deskripsi}}</p>
+        </div>
+    </div>
+</div>
+<!-- Main Banner Ends -->
+
+
+
+<!-- Skills Starts -->
+<div class="mt-4 p-2 md:px-10 lg:px-60">
+    <div class="m-2 ml-6 w-32 border-b border-gray-400">
+        <h1 class="font-black text-xl">{{sekte.0}}</h1>
+    </div>
+    <div class="grid md:grid-cols-2">
+        {% for item in skills %}
+            <ul class="container">
+                <li class="m-2">
+                    <p>{{item.bahasa}}</p>
+                    <div class="bg-gray-300 cursor-default rounded-lg text-right text-sm">
+                        <div class="text-white p-1 rounded-lg md:p-2" style="background-color:{{item.color}}; width:{{item.xp +5}}%;">
+                            {{item.xp}}%
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        {% endfor %}
+    </div>
+</div>
+<!-- Skills Ends -->
+
+
+
+<!-- Education Starts -->
+<div class="mt-4 p-2 md:px-10 lg:px-60">
+    <div class="m-2 ml-6 w-60 border-b border-gray-400">
+        <h1 class="font-black text-xl">{{sekte.1}}</h1>
+    </div>
+    <div class="grid md:grid-cols-2">
+        {% for item in education %}
+            <ul class="container">
+                <li class="m-2">
+                    <p class="font-bold ml-2 text-md md:text-sm lg:text-md">Tahun {{item.tahun}}</p>
+                    <div class="bg-gray-200 px-4 p-2">
+                        Menempuh pendidikan di {{ item.nama }}
+                    </div>
+                </li>
+            </ul>
+        {% endfor %}
+    </div>
+</div>
+<!-- Education Ends -->
+
+
+
+<!-- Portfolio Starts -->
+<div class="mt-4 p-2 md:px-10 lg:px-60">
+    <div class="m-2 ml-6 w-32 border-b border-gray-400">
+        <h1 class="pt-40 -mt-40 font-black text-xl" id="Portfolio">{{sekte.2}}</h1>
+    </div>
+    <div class="grid md:grid-cols-3">
+        {% for key, item in portfolio %}
+            <a href="portfolio.php?id={{key}}" 
+                class="group bg-gray-200 transition duration-300 grid grid-rows-1 rounded-xl p-2 m-2
+                        hover:shadow-lg transform hover:-translate-y-2">
+                <div class="bg-black w-auto overflow-hidden h-48">
+                    <img class="w-full transition duration-300 opacity-40 group-hover:opacity-100" src="assets/{{item.img}}" alt="{{item.img}}">
+                </div>
+                <div class="mt-2">
+                    <h3 class="text-md font-bold ml-2 md:text-lg lg:text-xl">{{item.judul}}</h3>
+                    <p class="text-xs md:text-sm">{{item.ket}}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+<!-- Portfolio Ends -->
+
+
+
+<!-- Contact Starts -->
+<div class="p-2 mt-10 md:px-10 md:mt-24 lg:px-40">
+    {% include 'contact.twig' %}
+</div>
+<!-- Contact Ends -->
+
+{% endblock %}

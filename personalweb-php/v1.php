@@ -88,7 +88,7 @@ else{
     <!-- Skills Starts -->
     <div class="container py-6 md:py-12">
         <div class="ml-2 mt-2 text-white text-lg md:text-xl md:ml-16">
-            <h6 class="font-bold">My Skills:</h6>
+            <h6 class="font-bold"><?=$sekte[0];?>:</h6>
         </div>
         <?php foreach($skills as $i):?>
         <div class="w-full text-white rounded-xl mt-4 p-2">
@@ -108,7 +108,7 @@ else{
     <!-- Education Starts -->
     <div class="container py-6 md:py-12">
         <div class="ml-2 mt-2 text-white text-lg md:text-xl md:ml-16">
-            <h6 class="font-bold">Riwayat Pendidikan:</h6>
+            <h6 class="font-bold"><?=$sekte[1];?>:</h6>
         </div>
         <div class="mt-1 text-white">
             <?php foreach($education as $i):?>
@@ -132,7 +132,7 @@ else{
 <!-- Portfolio Starts -->
 <div class="bg-gray-800 py-10 px-2 md:px-10 lg:px-36 border-t border-gray-700">
     <div class="text-center text-white text-lg">
-        <h6 class="pt-40 -mt-40 font-bold text-2xl" id="Portfolio">--Portfolio--</h6>
+        <h6 class="pt-40 -mt-40 font-bold text-2xl" id="Portfolio">--<?=$sekte[2];?>--</h6>
     </div>
     <div class="mt-3 text-white">
         <?php foreach($portfolio as $k => $i):?>

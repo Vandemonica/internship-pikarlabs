@@ -5,7 +5,7 @@ include "components/header.php";
 
 <div class="grid md:grid-cols-2 mt-4 mb-12 md:my-16">
     <?php foreach($vindex as $v):?>
-        <a href="<?=$v['link'];?>" class="group transform duration-300 transition my-1 mx-2 bg-gray-300 rounded-md md:my-10 md:mx-12 hover:shadow-2xl hover:-translate-y-4">
+        <a href="<?=$v['link'];?>" class="group transform duration-300 transition my-4 mx-2 bg-gray-300 rounded-md md:my-10 md:mx-12 hover:shadow-2xl hover:-translate-y-4">
             <div class="w-5/6 bg-black mt-6 mx-auto">
                 <img class="w-full opacity-30 transition duration-300 group-hover:opacity-100" src="assets/<?=$v['img'];?>" alt="<?=$v['img'];?>">
             </div>
