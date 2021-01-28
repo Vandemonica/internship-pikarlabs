@@ -6,30 +6,19 @@
 
 
 {% block content %}
-<?php
-include "components/data.php";
-include "components/backend.php";
-include "components/header.php";
 
-$id = @$_GET['id'];
-$result = GetPortfolio($portfolio, $id);
-?>
-
-<?php if(!empty($result) && isset($id) && $id != null):?>
-
-    <?php
-    $len = count($result[0]['imgx']);
-    $x = 0;
-
-
-    
-    $image = GetGaleriContent($portfolio[$id]['img'], $portfolio[$id]['imgx']);
-    $capt = GetGaleriContent($portfolio[$id]['capt'], $portfolio[$id]['captx']);
-
-    include "components/galeri.php";
-    ModalGaleri(-1, $capt, $image);
-    ?>
-
+<!-- Modal Galeri Starts -->
+  {%
+    include 'galeri.twig' 
+    with {
+      'index' : galeri.index,
+      'galeriId' : galeri.galeriId,
+      'slideId' : galeri.slideId,
+      'image' : galeri.img,
+      'caption' : galeri.capt,
+    }
+  %}
+<!-- Modal Galeri Ends -->
 
 {% if (id is not empty) and (portfolio is not empty) %}
 
@@ -45,7 +34,7 @@ $result = GetPortfolio($portfolio, $id);
 
             <!-- Extra Picture Starts -->
             <div class="space-x-2 grid md:grid-cols-{{len}}">
-                {% for key, item in portfolio.imgx %}
+                {% for item in portfolio.imgx %}
                     <div class="mt-8">
                         <img class="bg-black lg:w-full" src="assets/{{item}}" alt="{{item}}">
                         <small class="text-xs md:text-sm lg:text-md">{{item}}</small>

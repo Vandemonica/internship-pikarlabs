@@ -4,10 +4,10 @@ include "components/data.php";
 include "components/backend.php";
 
 
-$status = isset($_GET['mail']) ? $_GET['mail'] : null;
+$mailStatus = isset($_GET['mail']) ? $_GET['mail'] : null;
 
 
-switch ($status) {
+switch ($mailStatus) {
   case 'true':
       
     break;
@@ -17,7 +17,9 @@ switch ($status) {
     break;
 
   default:
-    echo $twig->render('v2.twig', $data);
+    echo $twig->render('v2.twig', 
+      ['data' => $data]
+    );
     break;
 }
 

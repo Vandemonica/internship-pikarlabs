@@ -65,4 +65,44 @@ function GetTime(){
     return $result;
 }
 
+function GaleriIndexer($index, $image, $caption, $result){
+    $len = count($image);
+
+
+    // index selain -1 digunakan jika perlu lebih dari satu pop-up galeri(contoh implementasi di v1)
+
+    if($index == -1){
+      $galeriId = 'galeri';
+      $slideId = 'slide-';
+
+      $result = [
+        'index' => $index,
+        'galeriId' => $galeriId, 
+        'slideId' => $slideId, 
+        'len' => $len, 
+        'img' => $image,
+        'capt' => $caption
+      ];
+    }
+    else{
+      $galeriId = 'galeri-'.$index;
+      $slideId = $index.'-slide-';
+
+
+      $result[] = [
+            'index' => $index, 
+            'galeriId' => $galeriId, 
+            'slideId' => $slideId, 
+            'len' => $len, 
+            'img' => $image,
+            'capt' => $caption
+      ];
+      
+    }
+
+    
+
+    return $result;
+  }
+
 ?>
