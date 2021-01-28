@@ -11,10 +11,10 @@ if(isset($_POST['email'])){
   $header = 'From: '.$dari;
 
   if( empty(trim($dari)) || empty(trim($subjek)) || empty(trim($pesan)) ){
-    header("location:?mail=false");
+    header("location:?mail=false#");
   }
   else{
-    header("location:?mail=true");
+    header("location:?mail=true#");
     mail($kepada, $subjek, $pesan, $header);
   }
 }
