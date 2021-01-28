@@ -19,6 +19,32 @@ if(isset($_POST['email'])){
   }
 }
 
+
+
+function GetMailMessage($get){
+  global $data;
+
+  $result = [];
+
+  if($get == 'true'){
+    $mHead = $data['pesanMail'][0]['header'];
+    $mDesc = $data['pesanMail'][0]['ket'];
+  }
+  elseif($get == 'false'){
+    $mHead = $data['pesanMail'][1]['header'];
+    $mDesc = $data['pesanMail'][1]['ket'];
+  }
+  else{
+    return null;
+  }
+
+  array_push($result, $mHead, $mDesc);
+
+  return $result;
+}
+
+
+
 function GetPortfolio($data, $id){
     $result = [];
 
@@ -31,9 +57,9 @@ function GetPortfolio($data, $id){
           $result = $v;
         }
     }
-
     return $result;
 }
+
 
 
 function GetGaleriContent($main, $extra){
@@ -44,6 +70,7 @@ function GetGaleriContent($main, $extra){
 
     return $result;
 }
+
 
 
 function GetTime(){
@@ -61,16 +88,15 @@ function GetTime(){
     else{
         $result = "Good night";
     }
-
     return $result;
 }
+
+
 
 function GaleriIndexer($index, $image, $caption, $result){
     $len = count($image);
 
-
     // index selain -1 digunakan jika perlu lebih dari satu pop-up galeri(contoh implementasi di v1)
-
     if($index == -1){
       $galeriId = 'galeri';
       $slideId = 'slide-';
@@ -88,7 +114,6 @@ function GaleriIndexer($index, $image, $caption, $result){
       $galeriId = 'galeri-'.$index;
       $slideId = $index.'-slide-';
 
-
       $result[] = [
             'index' => $index, 
             'galeriId' => $galeriId, 
@@ -96,12 +121,8 @@ function GaleriIndexer($index, $image, $caption, $result){
             'len' => $len, 
             'img' => $image,
             'capt' => $caption
-      ];
-      
+      ]; 
     }
-
-    
-
     return $result;
   }
 

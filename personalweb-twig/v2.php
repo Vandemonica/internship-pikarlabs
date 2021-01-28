@@ -5,22 +5,16 @@ include "components/backend.php";
 
 
 $mailStatus = isset($_GET['mail']) ? $_GET['mail'] : null;
+$mail = GetMailMessage($mailStatus);
 
 
-switch ($mailStatus) {
-  case 'true':
-      
-    break;
-    
-  case 'false':
+echo $twig->render('v2.twig', 
+  [
+    'data' => $data,
 
-    break;
-
-  default:
-    echo $twig->render('v2.twig', 
-      ['data' => $data]
-    );
-    break;
-}
+    // mail
+    'mail' => $mail,
+  ]
+)
 
 ?>

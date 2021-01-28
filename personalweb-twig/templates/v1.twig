@@ -6,62 +6,37 @@
 
 {% block content %}
 
-{# <?php
-session_start();
-include "components/data.php";
-include "components/backend.php";
-include "components/header.php";
-?>
 
 
-<?php
-// <---------Extra-------->
-if(isset($_POST['welcome'])){
-    $_SESSION['nama'] = $_POST['welcome'];
-}
-
-$time = GetTime();
-if(!isset($_SESSION['nama'])){
-    $welcome1 = $time.'!';
-    $welcome2 = "Greetings, How do you want us to refer you?";
-}
-else{
-    $welcome1 = $time.' '.$_SESSION['nama'].'!';
-    $welcome2 = "Hope you had a good day!";
-}
-?> #}
-
-<!-- Pop-Up Galeri Starts -->
-{# <div>
-    <?php
-        $len = count($portfolio);
-        
-        include_once "components/galeri.php";
-
-        for($x=0; $x<$len; $x++){
-            $image = GetGaleriContent($portfolio[$x]['img'], $portfolio[$x]['imgx']);
-            $capt = GetGaleriContent($portfolio[$x]['capt'], $portfolio[$x]['captx']);
-
-            ModalGaleri($x, $capt, $image);
+  <!-- Modal Mail Starts -->
+    {% if mail is not null %}
+      {%
+        include 'modalmail.twig'
+        with {
+          'header' : mail[0],
+          'body' : mail[1],
         }
-    ?>
-</div> #}
-<!-- Pop-Up Galeri Ends -->
+      %}
+    {% endif %}
+  <!-- Modal Mail Ends -->
 
-<!-- Modal Galeri Starts -->
-  {% for i in 0..galeri|length-1 %}
-    {%
-      include 'galeri.twig' 
-      with {
-        'index' : galeri[i].index,
-        'galeriId' : galeri[i].galeriId,
-        'slideId' : galeri[i].slideId,
-        'image' : galeri[i].img,
-        'caption' : galeri[i].capt,
-      }
-    %}
-  {% endfor %}
-<!-- Modal Galeri Ends -->
+
+
+  <!-- Modal Galeri Starts -->
+    {% for i in 0..galeri|length-1 %}
+      {%
+        include 'galeri.twig' 
+        with {
+          'index' : galeri[i].index,
+          'galeriId' : galeri[i].galeriId,
+          'slideId' : galeri[i].slideId,
+          'image' : galeri[i].img,
+          'caption' : galeri[i].capt,
+        }
+      %}
+    {% endfor %}
+  <!-- Modal Galeri Ends -->
+
 
 
   <!-- Navigation Bar Starts -->
@@ -76,15 +51,15 @@ else{
       <img class="opacity-60" src="assets/refuge.png" alt="Banner">
 
           <!-- Fitur extra untuk layar md+ -->
-          {# <div class="hidden opacity-80 font-mono absolute transform text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 md:block">
+          <div class="hidden opacity-80 font-mono absolute transform text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 md:block">
               <p id="welcome1" class="text-xl whitespace-nowrap text-white md:text-4xl lg:text-6xl"></p>
               <p id="welcome2" class="text-sm whitespace-nowrap my-2 text-white md:text-md lg:text-xl"></p>
-              <?php if(!isset($_SESSION['nama'])):?>
+              {% if nameSet == false %}
                   <form method="post">
                       <input class="text-center text-white bg-transparent border rounded-md py-1 w-full" name="welcome" type="text" placeholder="Your Name">
                   </form>
-              <?php endif;?>
-          </div> #}
+              {% endif %}
+          </div>
           <!-- Extra End -->
 
     </div>
@@ -96,7 +71,7 @@ else{
         <h1 class="font-bold text-xl mt-5 mb-1 md:text-2xl md:px-10 lg:px-36">
           {{data.profil.nama}}
         </h1>
-        <p class="text-md md:text-lg md:px-10 lg:px-36">
+        <p style="text-indent: 30px;" class="text-md md:text-lg md:px-10 lg:px-36">
           {{data.profil.deskripsi}}
         </p>
       </div>
@@ -200,11 +175,11 @@ else{
 
 
   <!-- Extra Script -->
-  {# <script>
-    var text1 = '<?=$welcome1;?>';
-    var text2 = '<?=$welcome2;?>';
+  <script>
+    var text1 = '{{welcome1}}';
+    var text2 = '{{welcome2}}';
   </script>
-  <script src="components/extra.js"></script> #}
+  <script src="components/extra.js"></script>
   <!-- Extra Ends -->
 
 

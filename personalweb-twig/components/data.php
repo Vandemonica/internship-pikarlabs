@@ -65,7 +65,7 @@ $data = [
       [
           'judul'=>'Cedrie',
           'tahun'=>'2020',
-          'ket'=>'Sebuah web based chat-bot wannabe',
+          'ket'=>'Sebuah chat-bot wannabe yang berbasis web',
           'link'=>'http://cyanya.000webhostapp.com/cedrie',
           'img'=>'cedrie0.png',
           'capt'=>'Tampilan chat Cedrie',
@@ -91,6 +91,20 @@ $data = [
           ]
       ]
   ],
+
+  'pesanMail' => [
+    [
+      'header' => 'Email anda terkirim',
+      'ket' => 'Terima kasih atas tanggapan anda'
+    ],
+  
+    [
+      'header' => 'Email anda tidak terkirim',
+      'ket' => 'Pastikan semua formulir email terisi dan jika tetap tidak bisa coba beberapa saat lagi'
+    ]
+  ]
+
+
 ];
 
 
