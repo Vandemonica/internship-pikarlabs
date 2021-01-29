@@ -5,6 +5,9 @@
       html{
         scroll-behavior: smooth;
       }
+      *{
+          font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+      }
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,10 +21,13 @@
 
 
 
+{# Navbar Starts #}
+  {% include 'navbar.twig' %}
+{# Navbar Ends #}
+
 {% block content %}
   {# content goes here... #}
 {% endblock %}
-
 
 
 <div class="bg-gray-700 text-xs md:text-sm text-gray-400 pt-4 border-t-2 border-solid border-gray-400 px-4 md:px-20 pb-6">
@@ -31,5 +37,7 @@
     <p>Website Design & Development by Ivan Nircahya</p>
   </div>
 </div>
+
+
 </body>
 </html>

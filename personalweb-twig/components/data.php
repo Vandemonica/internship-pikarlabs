@@ -1,18 +1,30 @@
 <?php
-$data = [
+$indexData = [
   'versi' => [
-    [ 'ver'=>'Versi 1', 
+    [
+      'ver'=>'Versi 1', 
       'link'=>'v1.php', 
       'img'=>'v1.png', 
       'ket'=>'Personal Web yang memiliki section: 
-              profil, skills, portfolio, dan contact dalam satu halaman'],
+              profil, skills, portfolio, dan contact dalam satu halaman'
+    ],
 
-    ['ver'=>'Versi 2', 
+    [
+      'ver'=>'Versi 2', 
       'link'=>'v2.php', 
       'img'=>'v2.png', 
-      'ket'=>'Seperti versi-1 tapi halaman portfolionya terpisah dan tampilan lebih minimalis'],
+      'ket'=>'Seperti versi-1 tapi halaman portfolionya terpisah dan tampilan lebih minimalis'
+    ],
   ],
+];
 
+
+$navbarData = [
+  [ 'judul'=>'Web Personal', 'sekte'=>['Profil', 'Portfolio', 'Contact'] ],
+  [ 'judul'=>'Web Personal', 'sekte'=>[] ],
+];
+
+$mainData = [
   'profil' => [
       'nama'=>'Ivan Nircahya',
       'foto'=>'redacted.jpg',
@@ -20,13 +32,6 @@ $data = [
                       yang duduk dibangku kelas 11 jurusan SIJA (Sistem Informatika Jaringan dan Aplikasi). 
                       Saat ini saya sedang menjelajahi dunia pemrogramman dan membuat project-project kecil 
                       menggunakan bahasa pemrogramman PHP, SQL(untuk database), C#, dan Python.'
-  ],
-
-  'navbar' => [
-      'judul'=>'Web Personal',
-      'sekte'=>[
-          'Profil', 'Portfolio', 'Contact'
-      ]
   ],
 
   'sekte' => [
@@ -103,8 +108,6 @@ $data = [
       'ket' => 'Pastikan semua formulir email terisi dan jika tetap tidak bisa coba beberapa saat lagi'
     ]
   ]
-
-
 ];
 
 

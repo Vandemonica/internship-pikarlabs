@@ -7,7 +7,7 @@ include "components/backend.php";
 
 
 // mail get check
-$mailStatus = isset($_GET['mail']) ? $_GET['mail'] : null;
+$mailStatus = isset($push) ? $push : null;
 
 
 
@@ -36,23 +36,23 @@ $mail = GetMailMessage($mailStatus);
 
 
 // Galeri controller
-$len = count($data['portfolio']);
+$len = count($mainData['portfolio']);
 $dataGaleri = [];
 
 for($x=0; $x<$len; $x++){
-  $image = GetGaleriContent($data['portfolio'][$x]['img'], $data['portfolio'][$x]['imgx']);
-  $capt = GetGaleriContent($data['portfolio'][$x]['capt'], $data['portfolio'][$x]['captx']);
+  $image = GetGaleriContent($mainData['portfolio'][$x]['img'], $mainData['portfolio'][$x]['imgx']);
+  $capt = GetGaleriContent($mainData['portfolio'][$x]['capt'], $mainData['portfolio'][$x]['captx']);
 
   $dataGaleri = GaleriIndexer($x, $image, $capt, $dataGaleri);
 }
 
 
-
 // Main rendering controller + mail check
 echo $twig->render('v1.twig', 
   [
-    'data' => $data,
+    'data' => $mainData,
     'galeri' => $dataGaleri,
+    'navbar' => $navbarData[0],
 
     // mail
     'mail' => $mail,

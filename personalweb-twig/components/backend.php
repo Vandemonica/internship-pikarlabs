@@ -11,28 +11,30 @@ if(isset($_POST['email'])){
   $header = 'From: '.$dari;
 
   if( empty(trim($dari)) || empty(trim($subjek)) || empty(trim($pesan)) ){
-    header("location:?mail=false#");
+    $push = 0;
+    header("location: ");
   }
   else{
-    header("location:?mail=true#");
+    $push = 1;
     mail($kepada, $subjek, $pesan, $header);
+    header("location: ");
   }
 }
 
 
 
 function GetMailMessage($get){
-  global $data;
+  global $mainData;
 
   $result = [];
 
-  if($get == 'true'){
-    $mHead = $data['pesanMail'][0]['header'];
-    $mDesc = $data['pesanMail'][0]['ket'];
+  if($get === 1){
+    $mHead = $mainData['pesanMail'][0]['header'];
+    $mDesc = $mainData['pesanMail'][0]['ket'];
   }
-  elseif($get == 'false'){
-    $mHead = $data['pesanMail'][1]['header'];
-    $mDesc = $data['pesanMail'][1]['ket'];
+  elseif($get === 0){
+    $mHead = $mainData['pesanMail'][1]['header'];
+    $mDesc = $mainData['pesanMail'][1]['ket'];
   }
   else{
     return null;

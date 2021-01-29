@@ -3,13 +3,6 @@
 
 
 {% block content %}
-  <style>
-      body{
-          font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-      }
-  </style>
-
-
   <!-- Modal Mail Starts -->
     {% if mail is not null %}
       {%
@@ -21,11 +14,6 @@
       %}
     {% endif %}
   <!-- Modal Mail Ends -->
-
-
-  <!-- Navigation Bar Starts -->
-  {% include 'navbar.twig' %}
-  <!-- Navigation Bar Ends -->
 
 
   <!-- Main Banner Starts -->
@@ -112,7 +100,7 @@
 
 
   <!-- Contact Starts -->
-  <div class="p-2 mt-10 md:px-10 md:mt-24 lg:px-40">
+  <div class="p-2 pt-10 md:pt-24 px-2 md:px-10 lg:px-36">
       {% include 'contact.twig' %}
   </div>
   <!-- Contact Ends -->
