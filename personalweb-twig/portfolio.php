@@ -4,10 +4,11 @@ include "components/data.php";
 include "components/backend.php";
 
 
-$id = $_GET['id'];
-$dataPortfolio = GetPortfolio($data['portfolio'], $id);
-$image = GetGaleriContent($data['portfolio'][$id]['img'], $data['portfolio'][$id]['imgx']);
-$capt = GetGaleriContent($data['portfolio'][$id]['capt'], $data['portfolio'][$id]['captx']);
+@$id = $_GET['id'];
+@$dataPortfolio = GetPortfolio($data['portfolio'], $id);
+@$image = GetGaleriContent($data['portfolio'][$id]['img'], $data['portfolio'][$id]['imgx']);
+@$capt = GetGaleriContent($data['portfolio'][$id]['capt'], $data['portfolio'][$id]['captx']);
+
 
 
 if( empty($dataPortfolio) ){

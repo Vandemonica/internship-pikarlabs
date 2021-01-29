@@ -94,7 +94,7 @@ function GetTime(){
 
 
 function GaleriIndexer($index, $image, $caption, $result){
-    $len = count($image);
+    @$len = count($image);
 
     // index selain -1 digunakan jika perlu lebih dari satu pop-up galeri(contoh implementasi di v1)
     if($index == -1){

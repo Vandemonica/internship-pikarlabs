@@ -11,8 +11,6 @@ $mail = GetMailMessage($mailStatus);
 echo $twig->render('v2.twig', 
   [
     'data' => $data,
-
-    // mail
     'mail' => $mail,
   ]
 )

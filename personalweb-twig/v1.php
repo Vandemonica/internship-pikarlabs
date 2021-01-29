@@ -15,7 +15,6 @@ $mailStatus = isset($_GET['mail']) ? $_GET['mail'] : null;
 if(isset($_POST['welcome'])){
   $_SESSION['nama'] = $_POST['welcome'];
 }
-
 $time = GetTime();
 if(!isset($_SESSION['nama'])){
   $welcome1 = $time.'!';

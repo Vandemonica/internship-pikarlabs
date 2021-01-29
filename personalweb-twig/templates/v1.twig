@@ -4,10 +4,9 @@
 
 {% extends '_layout.twig' %}
 
+
+
 {% block content %}
-
-
-
   <!-- Modal Mail Starts -->
     {% if mail is not null %}
       {%
@@ -19,7 +18,6 @@
       %}
     {% endif %}
   <!-- Modal Mail Ends -->
-
 
 
   <!-- Modal Galeri Starts -->
@@ -38,30 +36,26 @@
   <!-- Modal Galeri Ends -->
 
 
-
   <!-- Navigation Bar Starts -->
     {% include 'navbar.twig' %}
   <!-- Navigation Bar Ends -->
-
 
 
   <!-- Main Banner Starts -->
   <div class="w-auto">
     <div class="float-center relative bg-black">
       <img class="opacity-60" src="assets/refuge.png" alt="Banner">
-
-          <!-- Fitur extra untuk layar md+ -->
-          <div class="hidden opacity-80 font-mono absolute transform text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 md:block">
-              <p id="welcome1" class="text-xl whitespace-nowrap text-white md:text-4xl lg:text-6xl"></p>
-              <p id="welcome2" class="text-sm whitespace-nowrap my-2 text-white md:text-md lg:text-xl"></p>
-              {% if nameSet == false %}
-                  <form method="post">
-                      <input class="text-center text-white bg-transparent border rounded-md py-1 w-full" name="welcome" type="text" placeholder="Your Name">
-                  </form>
-              {% endif %}
-          </div>
-          <!-- Extra End -->
-
+      <!-- Fitur extra untuk layar md+ -->
+      <div class="hidden opacity-80 font-mono absolute transform text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 md:block">
+          <p id="welcome1" class="text-xl whitespace-nowrap text-white md:text-4xl lg:text-6xl"></p>
+          <p id="welcome2" class="text-sm whitespace-nowrap my-2 text-white md:text-md lg:text-xl"></p>
+          {% if nameSet == false %}
+              <form method="post">
+                  <input class="text-center text-white bg-transparent border rounded-md py-1 w-full" name="welcome" type="text" placeholder="Your Name">
+              </form>
+          {% endif %}
+      </div>
+      <!-- Extra End -->
     </div>
     <div class="text-white relative bg-gray-900 h-50 w-full p-4 border-t border-b border-solid border-indigo-900 md:flex md:flex-row">
       <div class="inline-block absolute -top-20 float-center p-2 sm:-top-40 md:ml-2 lg:ml-24 md:float-left md:-top-44 lg:-top-52">
@@ -78,7 +72,6 @@
     </div>
   </div>
   <!-- Main Banner Ends -->
-
 
 
   <!-- Skills x Education Starts -->
@@ -126,7 +119,6 @@
   <!-- Skills x Education Ends -->
 
 
-
   <!-- Portfolio Starts -->
   <div class="bg-gray-800 py-10 px-2 md:px-10 lg:px-36 border-t border-gray-700">
     <div class="text-center text-white text-lg">
@@ -166,7 +158,6 @@
   <!-- Portfolio Ends -->
 
 
-
   <!-- Contact Starts -->
   <div class="bg-gray-800 p-2 md:px-10 lg:px-22">
     {% include 'contact.twig' %}
@@ -181,7 +172,4 @@
   </script>
   <script src="components/extra.js"></script>
   <!-- Extra Ends -->
-
-
-
 {% endblock %}
