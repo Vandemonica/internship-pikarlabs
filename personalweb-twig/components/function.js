@@ -67,4 +67,16 @@ function HideModal(id){
     document.getElementById(id).style.display = 'none';
 }
 
+function HideSlide(key, max){
+  if(key == -1){
+    id = 'slide-';
+  }
+  else{
+    id = key+'-slide-';
+  }
 
+  for(let x=0; x<max; x++){
+    document.getElementById(id+x).style.display = 'none';
+    console.log(id+x);
+  }
+}
