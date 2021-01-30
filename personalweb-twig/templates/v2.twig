@@ -8,8 +8,10 @@
       {%
         include 'modalmail.twig'
         with {
-          'header' : mail[0],
-          'body' : mail[1],
+          'icon' : mail[0],
+          'color' : mail[1],
+          'header' : mail[2],
+          'body' : mail[3],
         }
       %}
     {% endif %}

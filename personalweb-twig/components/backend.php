@@ -29,10 +29,14 @@ function GetMailMessage($get){
   $result = [];
 
   if($get === 1){
+    $micon = $mainData['pesanMail'][0]['icon'];
+    $mcolor = $mainData['pesanMail'][0]['color'];
     $mHead = $mainData['pesanMail'][0]['header'];
     $mDesc = $mainData['pesanMail'][0]['ket'];
   }
   elseif($get === 0){
+    $micon = $mainData['pesanMail'][1]['icon'];
+    $mcolor = $mainData['pesanMail'][1]['color'];
     $mHead = $mainData['pesanMail'][1]['header'];
     $mDesc = $mainData['pesanMail'][1]['ket'];
   }
@@ -40,7 +44,7 @@ function GetMailMessage($get){
     return null;
   }
 
-  array_push($result, $mHead, $mDesc);
+  array_push($result, $micon, $mcolor, $mHead, $mDesc);
 
   return $result;
 }

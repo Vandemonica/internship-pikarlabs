@@ -1,21 +1,23 @@
-<div id="modal" style="display:none" 
-        class="fixed z-50 w-full h-full top-0 left-0 text-center bg-black bg-opacity-60 transition-all ease-in-out duration-500">
-    <div class="bg-gray-800 text-gray-200 text-extrabold rounded-xl mt-40 mx-2 md:mx-40 lg:mx-80">
+<div id="modal" style="display:none" class="fixed z-50 w-full h-full top-0 left-0 text-center bg-black bg-opacity-60">
+    <div class="relative text-black text-extrabold rounded-xl mt-40 mx-2 md:mx-40 lg:mx-80">
+        <div style="color: {{color}}; border: 2px solid {{color}};" class="absolute bg-gray-300 text-xl p-1 px-2 rounded-full -left-1 -top-4 md:-left-4 md:text-3xl lg:text-4xl">
+          {{icon|raw}}
+        </div>
         <button style="outline:none;" onclick="HideModal('modal');" 
-                class="text-lg text-gray-200 float-right p-2 mr-2 transition hover:text-red-500">
+                class="text-lg text-white float-right p-2 mr-2 hover:text-red-500">
             &#10005;
         </button>
-        <div class="m-2 p-2">
-            <h4 class="text-lg md:text-xl text-bold border-b-2 border-gray-200 transition duration-500">
+        <div class="p-2 bg-blue-500 text-white rounded-t-md">
+            <h4 class="text-lg md:text-xl mt-2 text-bold border-b-2 border-gray-200 duration-500">
                 {{header}}
             </h4>
-            <p class="text-md mt-4 md:text-lg md:px-10 transition duration-500">
+        </div>
+        <div class="p-2 bg-gray-300 rounded-b-md">
+            <p class="text-md mt-4 mb-8 md:text-lg md:px-10 duration-500">
                 {{body}}
             </p>
-        </div>
-        <div class="p-2">
             <button style="outline:none;" onclick="HideModal('modal');" 
-                    class="bg-transparent rounded-md text-gray-200 border-2 border-gray-200 px-6 transition hover:bg-red-600 hover:border-red-600">
+                    class="bg-transparent rounded-md text-black border-2 border-black px-6 hover:bg-red-600 hover:border-red-600 hover:text-white">
                 Close
             </button>
         </div>
