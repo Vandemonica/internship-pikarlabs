@@ -52,14 +52,17 @@ function prev(key, id, max){
 
 }
 
-function ShowModal(key, galery){
+function ShowModal(key, galery, slide){
+
+    slideId = slide == -1 ? 0 : slide+1;
+
     if(key == -1){
         document.getElementById(galery).style.display = 'block';
-        document.getElementById('slide-0').style.display = 'block';
+        document.getElementById('slide-'+slideId).style.display = 'block';
     }
     else{
         document.getElementById(galery).style.display = 'block';
-        document.getElementById(key+'-slide-0').style.display = 'block';
+        document.getElementById(key+'-slide-'+slideId).style.display = 'block';
     }  
 }
 

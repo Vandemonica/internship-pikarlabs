@@ -62,7 +62,7 @@
         <h1 class="font-bold text-xl mt-5 mb-1 md:text-2xl md:px-10 lg:px-48">
           {{data.profil.nama}}
         </h1>
-        <p style="text-indent: 30px;" class="text-md md:text-lg md:px-10 lg:px-48">
+        <p style="text-indent: 30px;" class="text-justify text-md md:text-lg md:px-10 lg:px-48">
           {{data.profil.deskripsi}}
         </p>
       </div>
@@ -132,7 +132,7 @@
               {{item.tahun}}
             </span>
           </h7>
-          <div onclick="ShowModal({{key}}, 'galeri-{{key}}')" class="group border bg-black relative text-center lg:w-5/6">
+          <div onclick="ShowModal({{key}}, 'galeri-{{key}}', -1)" class="group border bg-black relative text-center lg:w-5/6">
             <img class="w-full transition duration-300 cursor-pointer md:h-96 object-left-top object-cover group-hover:opacity-30" 
                 src="assets/{{item.img}}" alt="{{item.img}}">
             <div class="absolute transition duration-300 transform opacity-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 group-hover:opacity-100">

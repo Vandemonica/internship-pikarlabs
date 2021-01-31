@@ -23,11 +23,12 @@
 {% if (id is not empty) and (portfolio is not empty) %}
 
     <div class="grid w-full pb-40 p-2 pt-16 md:grid-cols-2 md:p-10 md:pt-24 lg:p-20 lg:pt-36">
-        <div class="mt-2 bg-gray-300 w-full rounded-md px-3 py-4">
+        <div class="mt-2 bg-gray-300 w-full px-3 py-4">
           <h1 style="font-family: 'Times New Roman', Times, serif;" class="mb-2 underline text-lg md:text-xl lg:text-2xl">Project ke #{{id+1}}</h1>
             <!-- Main Picture Starts -->
             <div>
-                <img class="bg-black lg:w-full" src="assets/{{portfolio.img}}" alt="{{portfolio.img}}">
+                <img onclick="ShowModal(-1, 'galeri', -1)" src="assets/{{portfolio.img}}" alt="{{portfolio.img}}"
+                  class="transform cursor-pointer bg-black lg:w-full hover:opacity-60 hover:-translate-y-2">
                 <small class="text-xs md:text-sm lg:text-md">{{portfolio.capt}}</small>
             </div>
             <!-- Main Picture Ends -->
@@ -35,9 +36,10 @@
 
             <!-- Extra Picture Starts -->
             <div class="space-x-2 grid md:grid-cols-{{len}}">
-                {% for item in portfolio.imgx %}
-                    <div class="mt-8">
-                        <img class="bg-black lg:w-full" src="assets/{{item}}" alt="{{item}}">
+                {% for key, item in portfolio.imgx %}
+                    <div class="relative mt-8">
+                        <img onclick="ShowModal(-1, 'galeri', {{key}})" src="assets/{{item}}" alt="{{item}}"
+                          class="transform cursor-pointer bg-black lg:w-full hover:opacity-60 hover:-translate-y-2">
                         <small class="text-xs md:text-sm lg:text-md">{{item}}</small>
                     </div>
                 {% endfor %}
@@ -60,7 +62,7 @@
             <p class="mb-4 text-lg"> Dibuat pada tahun: {{portfolio.tahun}}</p>
             <p class="text-md md:text-lg lg:text-xl">{{portfolio.ket}}</p>
             <div class="mt-12 text-white space-x-8">
-                <a onclick="ShowModal(-1, 'galeri')"
+                <a onclick="ShowModal(-1, 'galeri', -1)"
                         class="cursor-pointer bg-blue-500 py-1 px-6 rounded-md hover:bg-blue-400">
                     Galeri
                 </a>
@@ -72,6 +74,8 @@
         </div>
         <!-- Deskripsi and Button Ends -->
     </div>
+
+
 {% else %}
     <div class="p-2 pt-40 pb-96 w-full text-center md:w-1/2 mx-auto md:px-2">
         <div class="bg-red-600 rounded-t-md py-2">
