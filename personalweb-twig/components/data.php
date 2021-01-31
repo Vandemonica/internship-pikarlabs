@@ -99,18 +99,17 @@ $mainData = [
 
   'pesanMail' => [
     [
+      'icon' => '&#8197;!&#8197;',
+      'color' => 'red',
+      'header' => 'Email anda tidak terkirim',
+      'ket' => 'Pastikan semua formulir email terisi dan jika tetap tidak bisa coba beberapa saat lagi'
+    ],
+    [
       'icon' => '&#10003',
       'color' => 'green',
       'header' => 'Email anda terkirim',
       'ket' => 'Terima kasih atas tanggapan anda'
     ],
-  
-    [
-      'icon' => '&#8197;!&#8197;',
-      'color' => 'red',
-      'header' => 'Email anda tidak terkirim',
-      'ket' => 'Pastikan semua formulir email terisi dan jika tetap tidak bisa coba beberapa saat lagi'
-    ]
   ]
 ];
 

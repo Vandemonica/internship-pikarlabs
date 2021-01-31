@@ -28,11 +28,8 @@ else{
 }
 
 
-
-
 // mail controller
 $mail = GetMailMessage($mailStatus);
-
 
 
 // Galeri controller

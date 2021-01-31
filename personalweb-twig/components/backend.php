@@ -28,21 +28,14 @@ function GetMailMessage($get){
 
   $result = [];
 
-  if($get === 1){
-    $micon = $mainData['pesanMail'][0]['icon'];
-    $mcolor = $mainData['pesanMail'][0]['color'];
-    $mHead = $mainData['pesanMail'][0]['header'];
-    $mDesc = $mainData['pesanMail'][0]['ket'];
-  }
-  elseif($get === 0){
-    $micon = $mainData['pesanMail'][1]['icon'];
-    $mcolor = $mainData['pesanMail'][1]['color'];
-    $mHead = $mainData['pesanMail'][1]['header'];
-    $mDesc = $mainData['pesanMail'][1]['ket'];
-  }
-  else{
+  if($get === null){
     return null;
   }
+
+  $micon = $mainData['pesanMail'][$get]['icon'];
+  $mcolor = $mainData['pesanMail'][$get]['color'];
+  $mHead = $mainData['pesanMail'][$get]['header'];
+  $mDesc = $mainData['pesanMail'][$get]['ket'];
 
   array_push($result, $micon, $mcolor, $mHead, $mDesc);
 
@@ -54,7 +47,7 @@ function GetMailMessage($get){
 function GetPortfolio($data, $id){
     $result = [];
 
-    if($id == null){
+    if( !is_numeric($id) ){
       return false;
     }
 
@@ -63,6 +56,7 @@ function GetPortfolio($data, $id){
           $result = $v;
         }
     }
+
     return $result;
 }
 
